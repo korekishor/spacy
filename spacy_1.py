@@ -54,32 +54,3 @@
 #     print(entity.text, entity.label_)
  
 # ----------------------
-
-def set_custom1(doc):
-    for token in doc:
-        print(token,"--------",token.i)
-        
-def set_custom2(doc):
-    for token in doc[:-1]:
-        if token.text==';':
-            doc[token.i+1].is_sent_start=True
-        return doc
-
-
-import spacy
-nlp=spacy.load('en_core_web_sm')
-text=nlp(u"When Sebastian Thrun started working on self-driving cars at "
-         "Google in 2007, few people outside of the ; company took him "
-         "seriously. “I can tell you very senior CEOs of major American "
-         "car companies would shake my hand and turn away because I wasn’t "
-        "worth talking to,” said Thrun, in an interview with Recode earlier "
-         "this week.")
-
-
-# for lines in text.sents:
-#     print(lines)
-
-print("---------000000") 
- 
-nlp.add_pipe()
-print(nlp.add_pipe_names)
